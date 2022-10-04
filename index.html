@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> 추천 영화 소개 </title>
+
+  <!-- jQuery 1.8 or later, 33 KB -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+
+<!-- Fotorama from CDNJS, 19 KB -->
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"> </script>
+
+  <style>
+    *{
+    margin:0;
+    padding:0;
+    background-color: black;
+    font-family:"나눔스퀘어라운드";
+    }
+
+    .mainposter{
+      display: block;
+      margin: 0 auto;
+      height: 440px;
+      width: 1100px;
+      text-align: center;
+    }
+
+    #main {
+      padding-top: 175px;
+    }
+  .mainposter:hover{
+    opacity: 0.7;
+  }
+  h1{
+    text-align: center;
+    color: white;
+    padding: 35px 0;
+  }
+  ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0px;
+    overflow: hidden;
+    background-color: black;
+  }
+  li{
+    float: left;
+  }
+  li a{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 18px 40px;
+    text-decoration: none;
+  }
+  li a:hover:not(.active) {
+      background-color: #111;
+  }
+
+  audio {
+    position: absolute;
+    z-index: 10001;
+  }
+  header {
+      z-index: 9999;
+      width:100vw;
+      position: fixed;
+  }
+
+  .menu{
+    text-align: center; 
+  }
+
+  h1:active {color: gray; }
+
+  .menu > ul {
+    display: inline-block;
+  }
+
+  h1:active { color : #D5D5D5; }
+
+  .movie{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+  .movie ul {
+    display: inline-block;
+    text-align: center;
+  }
+  .poster{
+    padding: 20px 20px;
+    width: 300px;
+    height: 400px;
+  }
+  .poster:hover{
+    opacity: 0.3;
+  }
+  p{
+    color: white;
+    font-size: 16px;
+  }
+  .sub{
+    border: 1px solid white;
+    height: 100px;
+    width: 100px;
+  }
+  .subposter{
+    display: block;
+    margin: 0 auto;
+    height: 600px;
+    width: 440px;
+  }
+  th{
+    color: white;
+    padding: -5px;
+  }
+  table{
+    border: 1px solid white;
+    margin: 0 auto;
+    width: 800px;
+    height: 500px;
+  }
+  td{
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+  }
+  h2{
+    text-align: center;
+    color: white;
+  }
+  iframe{
+    display: block;
+    margin: 0 auto;
+  }
+  h1 a{
+    text-decoration: none;
+    color: white;
+  }
+  .imagebar{
+    padding: 0;
+    text-decoration: none;
+  }
+  h4{
+    text-align: center;
+    color: white;
+  }
+  h4 a{
+    text-decoration: none;
+    color: white;
+  }
+  .container{
+    color: #ffffff;
+  }
+
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1> <a href="index.html"> 추천 영화 </a> </h1>
+  <nav class="menu">
+    <ul>
+      <li onclick="pe1()"> <a href="#pe1"> 주연/배경지 </a> </li>
+      <li onclick="tw()"> <a href="#tw"> 트와일라잇 </a> </li>
+      <li onclick="nm()"> <a href="#nm"> 뉴 문 </a> </li>
+      <li onclick="ec()"> <a href="#ec"> 이클립스 </a> </li>
+      <li onclick="b1()"> <a href="#b1"> 브레이킹던 1 </a> </li>
+      <li onclick="b2()"> <a href="#b2"> 브레이킹던 2 </a> </li>
+    </ul>
+  </nav>
+</header>
+
+<div id="main"></div>
+
+<div class = "mainposter">
+  <div class="fotorama" data-width="1100" data-height="440" data-nav="thumbs">
+    <img src="img/eb8.jpg">
+    <img src="img/eb14.jpg">
+    <img src="img/eb16.jpg">
+    <img src="img/eb13.jpg">
+    <img src="img/eb15.jpg">
+    <img src="img/eb18.jpg">
+    <img src="img/br.jpg">
+    <img src="img/f1.jpg">
+    <img src="img/eb7-1.jpg">
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<h2> 트와일라잇 시리즈 </h2>
+<div class="movie">
+  <ul>
+    <li>
+      <p><a href="#" class="imagebar"><img src="img/pe1.jpg" class="poster" onclick="pe1()"> </a> </p>
+      <p> 주연/배경지 </p>
+    </li>
+    <li>
+      <p><a href="#" class="imagebar"><img src="img/tw.jpg" class="poster" onclick="tw()"> </a> </p>
+      <p> 트와일라잇 </p>
+    </li>
+    <li>
+      <p><a href="#" class="imagebar"><img src="img/nm.jpg" class="poster" onclick="nm()"> </a> </p>
+      <p> 뉴 문 </p>
+    </li>
+  </ul>
+<div>
+
+<div class="movie">
+  <ul>
+    <li>
+      <p> <a href="#" class="imagebar"> <img src="img/ec.jpg" class="poster" onclick="ec()"> </a> </p>
+      <p> 이클립스 </p>
+    </li>
+    <li>
+      <p> <a href="#" class="imagebar"> <img src="img/b1.jpg" class="poster" onclick="b1()"> </a> </p>
+      <p> 브레이킹던 1 </p>
+    </li>
+    <li>
+      <p> <a href="#" class="imagebar"> <img src="img/b2.jpg" class="poster" onclick="b2()"> </a> </p>
+      <p> 브레이킹던 2 </p>
+    </li>
+  </ul>
+</div>
+
+  <br>
+  <br>
+
+<script>
+function pe1()
+{
+  text="";
+
+  text+="<br>";
+  text+="<br>";
+  text+="<table>";
+  text+="<th><h1> 주연 </h1></th>";
+  text+='<tr><td> <img src="img/bl.jpg" width="200" height="200"> </td></tr>';
+  text+="<tr><td> 벨라 스완(Bella Swan) 역 - 크리스틴 스튜어트(Kristen Stewart) </td></tr>";
+  text+="<tr><td><h5> 친구들과의 관계가 무난하지 않은 사교성이 없고 소심한 성격을 가졌다.\
+  사랑에 관해 우유부단하여 상대방에게 상처를 주는 타입이며, 에드워드와 제이콥 사이에서 갈등을 하였고 결국 에드워드를 택했다. 훗날 에드워드와 결혼을 하여 르네즈미를 낳는다. </h5></td></tr>";
+  text+='<tr><td> <img src="img/ed.jpg" width="200" height="200" > </td></tr>';
+  text+="<tr><td> 에드워크 컬렌(Edward Cullen) 역 - 로버트 패틴슨(Robbert Pattison) </td></tr>";
+  text+="<tr><td><h5> 뱀파이어가 된 지 100년이 살짝 넘은 컬렌 가문에서 유일하게 짝이 없는 막내 아들로 인간과 공생하기로 한 뱀파이어라 동물의 피를 먹어 생명을 유지한다.\
+  벨라가 제이콥과의 자신의 사이에서 갈등을 하여도 제이콥을 벨라의 특별한 인연으로 받아들이는 순정파 뱀파이어이다.</h5></td></tr>";
+  text+='<tr><td> <img src="img/rn.jpg" width="200" height="200" > </td></tr>';
+  text+="<tr><td> 르네즈미 컬렌(Lenezme Cullen) 역 - 매켄지 포이(Mackenzie Christine Foy) </td></tr>";
+  text+="<tr><td><h5> 인간인 벨라와 뱀파이어인 에드워드 사이에서 태어난 딸로, 볼투리가에게 불멸의 아이라는 오해를 받는다. </h5></td></tr>";
+  text+='<tr><td> <img src="img/jc.jpg" width="200" height="200" > </td></tr>';
+  text+="<tr><td> 제이콥 블랙(Jacob Black) 역 - 테일러 로트너(Taylor Laughtner) </td></tr>";
+  text+="<tr><td><h5> 벨라를 사랑하는 늑대인간으로 자신이 아닌 에드워드를 택한 벨라로 인해 상처를 자주 받았음에도\
+  벨라가 필요할 때마다 곁에 있어준다. 벨라를 영원히 사랑할 거라 믿었으나 벨라와 에드워드의 딸 르네즈미에게 각인이 된다.  </h5></td></tr>";
+  text+="<br>";
+  text+="<br>";
+  text+="<th><h1> 극 중 주요 배경지 </h1></th>";
+  text+='<tr><td> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42754.06261010486!2d-124.42097698069769!3d47.953231177415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548e3e3073d1fad5%3A0xff8145429291a5f2!2z66-46rWtIDk4MzMxIOybjOyLse2EtCDtj6ztgazsiqQ!5e0!3m2!1sko!2skr!4v1607056304777!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></td></tr>';
+  text+="</table>";
+  document.getElementById("main").innerHTML=text;
+  window.scroll(0,0);
+
+}
+function tw()
+{
+  text="";
+  text+="<img src='img/tw.jpg' class='subposter'>";
+  text+="<br>";
+  text+="<br>";
+  text+="<table>";
+  text+="<th><h1>트와일라잇</h1></th>";
+  text+="<tr><td>감독 : 캐서린 하드윅 </td></tr>";
+  text+="<tr><td>개봉년도 : 2008년 </td></tr>";
+  text+="<tr><td>줄거리</td></tr>";
+  text+="<tr><td><p> 17세의 평범한 고등학생 소녀 ‘벨라’는 집안 사정으로 워싱턴 주 포크스에 있는 아빠의 집으로 이사를 온다.\
+  전학 첫날, ‘벨라’는 냉담하지만 자신을 무장 해제시킬 정도로 잘생긴 ‘에드워드’와 마주치고, 전율과 두려움 넘치는 인생의 전환을 맞이한다.\
+  ‘에드워드’와 돌이킬 수 없는 사랑에 빠져든 ‘벨라’. 하지만 ‘에드워드’와 그의 가족이 뱀파이어 일족이라는 사실을 알게 되고, 예기치 못한 운명에 빠져든다. </p></td></tr>";
+  text+="</table>";
+  document.getElementById("main").innerHTML=text;
+  window.scroll(0,0);
+}
+function nm()
+{
+  text="";
+  text+="<img src='img/nm.jpg' class='subposter'>";
+  text+="<br>";
+  text+="<br>";
+  text+="<table>";
+  text+="<th><h1>뉴 문</h1></th>";
+  text+="<tr><td>감독 : 크리스 웨이츠 </td></tr>";
+  text+="<tr><td>개봉년도 : 2009년 </td></tr>";
+  text+="<tr><td>줄거리</td></tr>";
+  text+="<tr><td><p> 초능력을 가진 뱀파이어 에드워드는 인간 벨라가 자신 때문에 위험해지자 냉정하게 그녀를 떠난다.\
+  이제 벨라를 지키는 것은 오랜 친구 제이콥. 하지만 제이콥은 뱀파이어와 적을 이루는 늑대인간 ‘퀼렛족’의 일원으로 벨라와 에드워드를 떼어놓고자 한다.\
+  그러던 어느 날 벨라는 자신이 위험한 사고를 당할 때마다 에드워드의 환영이 보인다는 것을 알고 급기야 절벽에서 떨어지는 무모한 행동을 한다.\
+  그리고 이 사건은 누구도 예상치 못할 결과를 초래하는데…</p></td></tr>";
+  text+="</table>";
+  document.getElementById("main").innerHTML=text;
+  window.scroll(0,0);
+}
+function ec()
+{
+  text="";
+  text+="<img src='img/ec.jpg' class='subposter'>";
+  text+="<br>";
+  text+="<br>";
+  text+="<table>";
+  text+="<th><h1>이클립스</h1></th>";
+  text+="<tr><td>감독 : 데이빗 슬레이드 </td></tr>";
+  text+="<tr><td>개봉년도 : 2010년 </td></tr>";
+  text+="<tr><td>줄거리</td></tr>";
+  text+="<tr><td><p> 불멸의 사랑을 위해 뱀파이어가 되기로 결심한 벨라. 제이콥은 벨라의 선택을 가로막으며 자신을택하도록 종용하고 이로 인해 에드워드와의 갈등은 더욱 심해진다.\
+  한편 시애틀에서 의문의 연쇄살인사건이 일어나고 에드워드는 곧 이 사건의 배후를 알게 되지만 벨라에게는 비밀로 하는데…\
+  신생 뱀파이어 군대. “뱀파이어가 된 것을 환영한다” 에드워드와 벨라가 소멸한 연인의 복수를 위해 빅토리아가 새롭게 창조한 뱀파이어 집단.\
+  이들은 심한 갈증으로 인해 그 어떤 뱀파이어보다도 강하고 잔인하다. 그 중에서도 리더이자 최고의 초능력을 가진 라일리는 컬렌-퀼렛 연합군에게 가장 위협적인 존재.\
+  컬렌가-퀼렛족 연합군. “목숨을 건 전쟁이 될 거다” 뱀파이어 에드워드의 컬렌가와 늑대인간 제이콥의 퀼렛족은 오래 전부터 서로를 노려온 적대관계.\
+  벨라로 인해 더욱 갈등이 고조되지만 신생 뱀파이어들의 공격을 막기 위해 두 종족은 단호한 결단으로 연합군 결성을 이룬다.\
+  볼투리 가. “우린 두 번의 기회는 주지 않아”뱀파이어 최고의 권력집단. 타인의 기억과 생각을 모두 읽고 고통을 주는 능력으로 모든 뱀파이어들이 가장 두려워하는 종족.\
+  벨라를 뱀파이어로 만들겠다는 에드워드의 약속이 지켜지지 않자 컬렌가를 찾아온다.</p></td></tr>";
+  text+="</table>";
+  document.getElementById("main").innerHTML=text;
+  window.scroll(0,0);
+}
+function b1()
+{
+  text="";
+  text+="<img src='img/b1.jpg' class='subposter'>";
+  text+="<br>";
+  text+="<br>";
+  text+="<table>";
+  text+="<th><h1>브레이킹던 1</h1></th>";
+  text+="<tr><td>감독 : 빌 콘돈 </td></tr>";
+  text+="<tr><td>개봉년도 : 2011년 </td></tr>";
+  text+="<tr><td>줄거리</td></tr>";
+  text+="<tr><td><p> 전세계가 기다려온 세기의 결혼식! 인간과 뱀파이어의 결합이 불러온 새로운 운명이 시작된다!\
+  우여곡절 끝에 많은 이들의 축복 속에 뱀파이어 에드워드와 결혼식을 올린 벨라!\
+  아직 마음을 정리하지 못한 제이콥을 뒤로 하고 허니문을 떠난 밸라와 에드워드는 세상에서 가장 아름답고 특별한 첫날 밤을 보내게 된다.\
+  행복한 시간도 잠시, 예상치 못한 임신을 한 벨라. 아기는 하루가 다르게 놀라운 속도로 자라며 벨라의 생명을 위협한다.\
+  새로운 생명의 탄생이 불러올 종족 간 최대의 위기! 시리즈 사상 가장 거대한 전쟁이 펼쳐진다!\
+  한편 늑대인간 ‘퀼렛’족은 인간과 뱀파이어의 결합으로 생긴 아기가 후에 위험한 존재가 될 것이라고 판단, 임신한 벨라를 없애려 한다.\
+  제이콥은 자신의 종족을 이탈해 뱀파이어 ‘컬렌’가와 함께 벨라를 지킨다.\
+  그러나 벨라는 배 속에서 강력한 힘으로 빠르게 자라는 아기 때문에 목숨이 위태로운 상황에 놓이는데…!</p></td></tr>";
+  text+="</table>";
+  document.getElementById("main").innerHTML=text;
+  window.scroll(0,0);
+}
+function b2()
+{
+  text="";
+  text+="<img src='img/b2.jpg' class='subposter'>";
+  text+="<br>";
+  text+="<br>";
+  text+="<table>";
+  text+="<th><h1>브레이킹던 2</h1></th>";
+  text+="<tr><td>감독 : 캐서린 하드윅 </td></tr>";
+  text+="<tr><td>개봉년도 : 2012년</td></tr>";
+  text+="<tr><td>줄거리</td></tr>";
+  text+="<tr><td><p> 르네즈미를 잉태하면서 죽음의 순간까지 닿았던 벨라는 그녀를 살리기 위한 에드워드의 노력으로 마침내 뱀파이어로 다시 태어나고,\
+  제이콥이 자신의 딸 르네즈미에게 ‘각인’되었다는 사실을 알고 충격에 빠진다.\
+  한편 르네즈미를 뱀파이어에게 위험한 ‘불멸의 아이’라고 판단한 ‘볼투리’가는 그녀를 제거하기 위해 군대를 모으기 시작한다.\
+  신이 허락하지 않은 인간과 뱀파이어의 사랑이 불러 온 위험천만한 전운이 ‘컬렌’가를 감돌고 벨라와 르네즈미를 지키기 위해\
+  전세계에 흩어져 있는 뱀파이어들을 모은 에드워드는 볼투리의 군대와 최후의 전쟁을 시작하는데...\
+  전세계가 열광하는 매혹적인 판타지 대서사의 화려한 피날레가 마침내 시작된다!</p></td></tr>";
+  text+="</table>";
+  document.getElementById("main").innerHTML=text;
+  window.scroll(0,0);
+}
+</script>
+
+<div id="main-footer">
+  <footer class="container">
+    <div> 박나연 </div>
+  </footer>
+</div>
+
+</body>
+</html>
