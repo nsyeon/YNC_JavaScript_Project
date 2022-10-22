@@ -1,0 +1,164 @@
+*{
+    margin:0;
+    padding:0;
+    background-color: black;
+    font-family:"나눔스퀘어라운드";
+}
+
+.mainposter{
+    display: block;
+    margin: 0 auto;
+    height: 440px;
+    width: 1100px;
+    text-align: center;
+}
+
+#main {
+    padding-top: 175px;
+}
+
+.mainposter:hover{
+    opacity: 0.7;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    padding: 35px 0;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0px;
+    overflow: hidden;
+    background-color: black;
+}
+
+li{
+    float: left;
+}
+
+li a{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 18px 40px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+audio {
+    position: absolute;
+    z-index: 10001;
+}
+
+header {
+    z-index: 9999;
+    width:100vw;
+    position: fixed;
+}
+
+.menu{
+    text-align: center; 
+}
+
+h1:active {color: gray; }
+
+.menu > ul {
+    display: inline-block;
+}
+
+h1:active { color : #D5D5D5; }
+
+.movie{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.movie ul {
+    display: inline-block;
+    text-align: center;
+}
+.poster{
+    padding: 20px 20px;
+    width: 300px;
+    height: 400px;
+}
+
+.poster:hover{
+    opacity: 0.3;
+}
+
+p{
+    color: white;
+    font-size: 16px;
+}
+
+.sub{
+    border: 1px solid white;
+    height: 100px;
+    width: 100px;
+}
+
+.subposter{
+    display: block;
+    margin: 0 auto;
+    height: 600px;
+    width: 440px;
+}
+
+th{
+    color: white;
+    padding: -5px;
+}
+
+table{
+    border: 1px solid white;
+    margin: 0 auto;
+    width: 800px;
+    height: 500px;
+}
+
+td{
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+h2{
+    text-align: center;
+    color: white;
+}
+
+iframe{
+    display: block;
+    margin: 0 auto;
+}
+
+h1 a{
+    text-decoration: none;
+    color: white;
+}
+
+.imagebar{
+    padding: 0;
+    text-decoration: none;
+}
+
+h4{
+    text-align: center;
+    color: white;
+}
+
+h4 a{
+    text-decoration: none;
+    color: white;
+}
+
+.container{
+    color: #ffffff;
+}
